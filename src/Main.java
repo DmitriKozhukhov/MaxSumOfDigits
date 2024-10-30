@@ -9,7 +9,6 @@ public class Main {
         while (true) {
             String str = scanner.nextLine();
             int currentNum = Integer.parseInt(str);
-            //System.out.println(currentNum);
             if (currentNum == 0) {
                 break;
             }
