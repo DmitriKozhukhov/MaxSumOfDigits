@@ -7,22 +7,28 @@ public class Main {
         int maxSum = 0;
         int numberMaxSum = 0;
         while (true) {
-            String str = scanner.nextLine();
-            int currentNum = Integer.parseInt(str);
-            if (currentNum == 0) {
-                break;
-            }
-            char[] array = str.toCharArray();
-            int sumOfDigits = 0;
-            for (char c : array) {
-                sumOfDigits += Character.getNumericValue(c);
-            }
-            if (sumOfDigits > maxSum) {
-                maxSum = sumOfDigits;
-                numberMaxSum = currentNum;
+            try {
+                String str = scanner.nextLine();
+                int currentNum = Integer.parseInt(str);
+                if (currentNum == 0) {
+                    break;
+                }
+                char[] array = str.toCharArray();
+                int sumOfDigits = 0;
+                for (char c : array) {
+                    sumOfDigits += Character.getNumericValue(c);
+                }
+                if (sumOfDigits > maxSum) {
+                    maxSum = sumOfDigits;
+                    numberMaxSum = currentNum;
 
+                }
+            } catch (NumberFormatException e) {
+                System.err.println("Введенные данные не являются целым числом. Введите целое число.");
             }
+
         }
-        System.out.printf("Число с максимальной суммой цифр: %d",numberMaxSum);
+
+        System.out.printf("Число с максимальной суммой цифр: %d", numberMaxSum);
     }
 }
