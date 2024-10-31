@@ -15,8 +15,15 @@ public class Main {
                 }
                 char[] array = str.toCharArray();
                 int sumOfDigits = 0;
-                for (char c : array) {
-                    sumOfDigits += Character.getNumericValue(c);
+                if (currentNum < 0) {
+                    for (int i = 1; i < array.length; i++) {
+                        sumOfDigits += Character.getNumericValue(array[i]);
+                    }
+                } else {
+                    for (char c : array) {
+                        sumOfDigits += Character.getNumericValue(c);
+                    }
+
                 }
                 if (sumOfDigits > maxSum) {
                     maxSum = sumOfDigits;
